@@ -200,19 +200,14 @@ function pharmacyexpress_fonts_url() {
 	$fonts     = array();
 	$subsets   = 'latin,latin-ext';
 
-	/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'pharmacyexpress' ) ) {
-		$fonts[] = 'Merriweather:400,700,900,400italic,700italic,900italic';
+	/* translators: If there are characters in your language that are not supported by Bitter, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Bitter font: on or off', 'pharmacyexpress' ) ) {
+		$fonts[] = 'Bitter:400,700';
 	}
 
-	/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'pharmacyexpress' ) ) {
-		$fonts[] = 'Montserrat:400,700';
-	}
-
-	/* translators: If there are characters in your language that are not supported by Inconsolata, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'pharmacyexpress' ) ) {
-		$fonts[] = 'Inconsolata:400';
+	/* translators: If there are characters in your language that are not supported by Raleway, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Raleway font: on or off', 'pharmacyexpress' ) ) {
+		$fonts[] = 'Raleway:400';
 	}
 
 	if ( $fonts ) {
@@ -250,7 +245,10 @@ function pharmacyexpress_scripts() {
 
     wp_enqueue_script( 'bootstrap-js' );
     wp_enqueue_style( 'bootstrap-css' );
-    
+	
+	// Load FontAwesome
+	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'); 
+
 	// Load stylesheet.
 	wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/css/main.css', array( 'pharmacyexpress-style' ), '20160816' );
 
@@ -415,3 +413,9 @@ function pharmacyexpress_widget_tag_cloud_args( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'pharmacyexpress_widget_tag_cloud_args' );
+
+
+// Add Advanced Custom Fields Theme Options
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}

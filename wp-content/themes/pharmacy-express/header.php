@@ -26,7 +26,7 @@
 		<div class="site-inner">
 	
 			<header id="masthead" class="site-header" role="banner" style="background-image: url('<?php header_image(); ?>'); background-size: cover;">
-				<nav class="navbar background-white-30 no-border-radius" style="height: 200px;">
+				<nav class="navbar navbar-fixed-top background-white-30 no-border-radius" style="height: 150px;">
 				  <div class="container">
 				    <!-- Brand and toggle get grouped for better mobile display -->
 				    <div class="navbar-header">
@@ -36,30 +36,30 @@
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
 				      </button>
-				      <div class="navbar-brand">
+				      <div class="navbar-brand buffer-padding-30">
 					      <?php pharmacyexpress_the_custom_logo(); ?>
 				      </div>
 				    </div>
 				
 				    <!-- Collect the nav links, forms, and other content for toggling -->
-				    <div class="collapse navbar-collapse" id="navbar-collapse">
+				    <div class="collapse navbar-collapse text-dark-blue text-bold" id="navbar-collapse">
 						<?php if ( has_nav_menu( 'sub-primary' ) ) : ?>
-						<div class="width-100">
+						<div class="container">
 							<?php
 								wp_nav_menu( array(
 									'theme_location' => 'sub-primary',
-									'menu_class'     => 'nav navbar-nav navbar-right sub-header-menu text-white font-size-120',
+									'menu_class'     => 'nav navbar-nav navbar-right sub-header-menu font-size-120 buffer-padding-15',
 								 ) );
 							?>
 						</div>
 						<?php endif; ?>
 
 						<?php if ( has_nav_menu( 'primary' ) ) : ?>
-						<div class="width-100">
+						<div class="container">
 							<?php
 								wp_nav_menu( array(
 									'theme_location' => 'primary',
-									'menu_class'     => 'nav navbar-nav navbar-right primary-menu text-white font-size-200 text-uppercase',
+									'menu_class'     => 'nav navbar-nav navbar-right primary-menu font-size-150 text-uppercase border-bottom-gold-3',
 								 ) );
 							?>
 						</div>
@@ -68,37 +68,24 @@
 				  </div><!-- /.container-fluid -->
 				</nav>
 
-				<div class="site-header-main">
+				<div class="site-header-main container-fluid text-center buffer-padding-top-200 height-100">
 					<div class="site-branding">
-						<?php
-						$description = get_bloginfo( 'description', 'display' );
-						if ( $description || is_customize_preview() ) : ?>
-							<p class="site-description"><?php echo $description; ?></p>
-						<?php endif; ?>
+						<img src="<?php the_field('header_image'); ?>" height="300"></img>
 					</div><!-- .site-branding -->
-	
-					<?php if ( has_nav_menu( 'social' ) ) : ?>
-						<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'pharmacyexpress' ); ?></button>
-	
-						<div id="site-header-menu" class="site-header-menu">
-	
-							<?php if ( has_nav_menu( 'social' ) ) : ?>
-								<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'pharmacyexpress' ); ?>">
-									<?php
-										wp_nav_menu( array(
-											'theme_location' => 'social',
-											'menu_class'     => 'social-links-menu',
-											'depth'          => 1,
-											'link_before'    => '<span class="screen-reader-text">',
-											'link_after'     => '</span>',
-										) );
-									?>
-								</nav><!-- .social-navigation -->
+					<span class="text-gold">
+						<div class="buffer-margin-100">
+							<?php
+							$description = get_bloginfo( 'description', 'display' );
+							if ( $description || is_customize_preview() ) : ?>
+								<p class="site-description"><?php echo $description; ?></p>
 							<?php endif; ?>
-						</div><!-- .site-header-menu -->
-					<?php endif; ?>
+						</div>
+	
+						<div class="buffer-margin-50">
+							<a class="skip-link screen-reader-text" href="#content"><?php _e( '<i class="fa fa-angle-double-down fa-5x" aria-hidden="true"></i>', 'pharmacyexpress' ); ?></a>
+						</div>
+					</span>
 				</div><!-- .site-header-main -->
-			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'pharmacyexpress' ); ?></a>
 			</header><!-- .site-header -->
 	
 	

@@ -12,18 +12,7 @@
 
 		</div><!-- .site-content -->
 
-		<footer id="colophon" class="site-footer" role="contentinfo">
-			<?php if ( has_nav_menu( 'primary' ) ) : ?>
-				<nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Primary Menu', 'pharmacyexpress' ); ?>">
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'primary',
-							'menu_class'     => 'primary-menu',
-						 ) );
-					?>
-				</nav><!-- .main-navigation -->
-			<?php endif; ?>
-
+		<footer id="colophon" class="site-footer background-dark-blue" role="contentinfo">
 			<?php if ( has_nav_menu( 'social' ) ) : ?>
 				<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'pharmacyexpress' ); ?>">
 					<?php
@@ -38,7 +27,7 @@
 				</nav><!-- .social-navigation -->
 			<?php endif; ?>
 
-			<div class="site-info">
+			<div class="site-info container buffer-padding-50">
 				<?php
 					/**
 					 * Fires before the pharmacyexpress footer text for footer customization.
@@ -47,7 +36,16 @@
 					 */
 					do_action( 'pharmacyexpress_credits' );
 				?>
-				<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
+				
+				<span class="text-center">
+					<div class="col-md-4">
+						<span class="site-title"><a class="text-gold text-bold text-bitter font-size-150 text-decoration-none" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?> <?php echo date("Y"); ?></a></span>
+					</div>
+
+					<div class="col-md-4 col-md-offset-4">
+						<img src="<?php the_field('footer_logo', 'option'); ?>" width="300"></img>
+					</div>
+				</span>
 			</div><!-- .site-info -->
 		</footer><!-- .site-footer -->
 	</div><!-- .site-inner -->
