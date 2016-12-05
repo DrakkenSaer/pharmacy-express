@@ -26,15 +26,15 @@
 		<div class="site-inner">
 	
 			<header id="masthead" class="site-header" role="banner" style="background-image: url('<?php header_image(); ?>'); background-size: cover;">
-				<nav class="navbar navbar-fixed-top background-white-30 no-border-radius" style="height: 150px;">
+				<nav class="navbar navbar-fixed-top background-white-30 no-border-radius" style="height: 134px;">
 				  <div class="container">
-				    <!-- Brand and toggle get grouped for better mobile display -->
+				    <!-- Brand and toggle get grouped for better xs display -->
 				    <div class="navbar-header">
-				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+				      <button type="button" class="navbar-toggle collapsed buffer-margin-50 background-dark-blue" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
 				        <span class="sr-only">Toggle navigation</span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
+				        <span class="icon-bar background-white"></span>
+				        <span class="icon-bar background-white"></span>
+				        <span class="icon-bar background-white"></span>
 				      </button>
 				      <div class="navbar-brand buffer-padding-30">
 					      <?php pharmacyexpress_the_custom_logo(); ?>
@@ -42,13 +42,13 @@
 				    </div>
 				
 				    <!-- Collect the nav links, forms, and other content for toggling -->
-				    <div class="collapse navbar-collapse text-dark-blue text-bold" id="navbar-collapse">
+				    <div class="collapse navbar-collapse text-dark-blue text-bold background-white-30-mobile" id="navbar-collapse">
 						<?php if ( has_nav_menu( 'sub-primary' ) ) : ?>
 						<div class="container">
 							<?php
 								wp_nav_menu( array(
 									'theme_location' => 'sub-primary',
-									'menu_class'     => 'nav navbar-nav navbar-right sub-header-menu font-size-120 buffer-padding-15',
+									'menu_class'     => 'nav navbar-nav navbar-right sub-header-menu font-size-120 buffer-padding-10 no-padding-xs text-white-xs font-size-100-mobile text-transform-none-mobile',
 								 ) );
 							?>
 						</div>
@@ -59,7 +59,7 @@
 							<?php
 								wp_nav_menu( array(
 									'theme_location' => 'primary',
-									'menu_class'     => 'nav navbar-nav navbar-right primary-menu font-size-150 text-uppercase border-bottom-gold-3',
+									'menu_class'     => 'nav navbar-nav navbar-right primary-menu font-size-150 text-uppercase border-bottom-gold-3 text-white-xs no-border-xs font-size-100-mobile text-transform-none-mobile',
 								 ) );
 							?>
 						</div>

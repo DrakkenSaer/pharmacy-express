@@ -135,3 +135,13 @@
 .no-margin-left { margin-left: 0 !important; }
 
 .inline-block { display: inline-block; }
+
+
+@media(max-width:767px){
+	.no-padding-xs { padding: 0 !important; }
+	.no-border-xs { border: none !important; }
+	.text-white-xs { color: white !important; }
+	.font-size-100-mobile { font-size: 100% !important; }
+	.text-transform-none-mobile { text-transform: none !important; }
+	.no-background-mobile { background: none !important; }
+}

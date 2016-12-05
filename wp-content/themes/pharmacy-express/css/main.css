@@ -15,6 +15,12 @@
 	background: rgba(254,254,254,0.3);
 }
 .background-dark-blue { background: #16224A; }
+.background-white { background: white; }
+
+@media(max-width:767px){
+    .background-white-30-mobile { background: rgba(254,254,254,0.3); }
+}
+
 
 /* Font CSS */
 
