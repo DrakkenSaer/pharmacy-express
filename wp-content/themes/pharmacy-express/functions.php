@@ -278,6 +278,9 @@ function pharmacyexpress_scripts() {
 		'expand'   => __( 'expand child menu', 'pharmacyexpress' ),
 		'collapse' => __( 'collapse child menu', 'pharmacyexpress' ),
 	) );
+	
+	// Load smooth scrol function
+	wp_enqueue_script( 'pharmacyexpress-smooth-scroll', get_template_directory_uri() . '/js/smooth-scroll.js', array( 'jquery' ), '1.0' );
 }
 add_action( 'wp_enqueue_scripts', 'pharmacyexpress_scripts' );
 

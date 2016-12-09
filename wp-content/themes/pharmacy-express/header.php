@@ -26,7 +26,7 @@
 		<div class="site-inner">
 	
 			<header id="masthead" class="site-header" role="banner" style="background-image: url('<?php header_image(); ?>'); background-size: cover;">
-				<nav class="navbar navbar-fixed-top background-white-30 no-border-radius" style="height: 134px;">
+				<nav class="navbar navbar-fixed-top background-white-50 no-border-radius" style="height: 135px;">
 				  <div class="container">
 				    <!-- Brand and toggle get grouped for better xs display -->
 				    <div class="navbar-header">
@@ -36,7 +36,7 @@
 				        <span class="icon-bar background-white"></span>
 				        <span class="icon-bar background-white"></span>
 				      </button>
-				      <div class="navbar-brand buffer-padding-30">
+				      <div class="navbar-brand buffer-margin-10">
 					      <?php pharmacyexpress_the_custom_logo(); ?>
 				      </div>
 				    </div>

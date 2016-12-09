@@ -11,10 +11,11 @@
 
 /* Background Colors */
 
-.background-white-30 {
-	background: rgba(254,254,254,0.3);
+.background-white-50 {
+	background: rgba(237,237,237,0.66);
 }
 .background-dark-blue { background: #16224A; }
+.background-light-blue { background: #8298BF; }
 .background-white { background: white; }
 
 @media(max-width:767px){
