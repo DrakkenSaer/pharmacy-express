@@ -51,7 +51,7 @@ get_header(); ?>
 					<div class="row">
 						<?php $index = 0; while ( have_rows('carousel_slide') ) : the_row(); ?>
 						
-						<button data-target="#<?php echo $slide_id; ?>" data-slide-to="<?php echo $index ?>" class="<?php echo 'col-sm-'.(12/$row_count); echo ($index == 0) ? ' active' : '' ?>">
+						<button data-target="#<?php echo $slide_id; ?>" data-slide-to="<?php echo $index ?>" class="<?php echo 'col-sm-'.(12/$row_count); echo ($index == 0) ? ' active ' : ' '; get_sub_field('indicator_class') ? the_sub_field('indicator_class') : ''; ?>">
 							<?php the_sub_field('indicator_title'); ?>
 						</button>
 
@@ -59,7 +59,7 @@ get_header(); ?>
 					</div>
 					
 					<div class="row">
-						<div id="<?php echo $slide_id; ?>" class="carousel slide" data-ride="carousel">
+						<div id="<?php echo $slide_id; ?>" class="carousel slide" data-ride="carousel" style="height: <?php the_sub_field('carousel_height'); ?>;">
 							<div class="carousel-inner" role="listbox">
 								<?php $index = 0; while ( have_rows('carousel_slide') ) : the_row(); ?>
 						
