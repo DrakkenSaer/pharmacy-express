@@ -17,10 +17,7 @@
 .background-dark-blue { background: #16224A; }
 .background-light-blue { background: #8298BF; }
 .background-white { background: white; }
-
-@media(max-width:767px){
-    .background-white-30-mobile { background: rgba(254,254,254,0.3); }
-}
+.background-light-gray { background: #d1d1d1 !important; }
 
 
 /* Font CSS */
@@ -62,3 +59,14 @@ html, body {
 
 input, textarea, select { border-radius: 0 !important; }
 
+
+
+/* Bootstrap Overrides */
+
+.carousel-indicators {
+    all: unset;
+}
+
+.carousel-indicators .active {
+    height: auto;
+}
