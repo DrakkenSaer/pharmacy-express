@@ -19,6 +19,13 @@
 .background-white { background: white; }
 .background-light-gray { background: #d1d1d1 !important; }
 
+@media only screen and (max-width : 480px) {
+    .background-white-50-mobile {
+        background: rgba(237,237,237,0.66);
+    }
+}
+
+
 
 /* Font CSS */
 
@@ -63,10 +70,10 @@ input, textarea, select { border-radius: 0 !important; }
 
 /* Bootstrap Overrides */
 
-.carousel-indicators {
-    all: unset;
-}
+.carousel-indicators { all: unset; }
 
-.carousel-indicators .active {
-    height: auto;
+.carousel-indicators .active { height: auto; }
+
+@media only screen and (max-width : 480px) {
+    .carousel-indicators .active { width: 100% !important; }
 }

@@ -42,26 +42,22 @@
 				    </div>
 				
 				    <!-- Collect the nav links, forms, and other content for toggling -->
-				    <div class="collapse navbar-collapse text-dark-blue text-bold background-white-30-mobile" id="navbar-collapse">
+				    <div class="collapse navbar-collapse text-dark-blue text-bold background-white-50-mobile" id="navbar-collapse">
 						<?php if ( has_nav_menu( 'sub-primary' ) ) : ?>
 						<div class="container">
-							<?php
-								wp_nav_menu( array(
+							<?php wp_nav_menu( array(
 									'theme_location' => 'sub-primary',
 									'menu_class'     => 'nav navbar-nav navbar-right sub-header-menu font-size-120 buffer-padding-10 no-padding-xs text-white-xs font-size-100-mobile text-transform-none-mobile',
-								 ) );
-							?>
+								 ) ); ?>
 						</div>
 						<?php endif; ?>
 
 						<?php if ( has_nav_menu( 'primary' ) ) : ?>
 						<div class="container">
-							<?php
-								wp_nav_menu( array(
+							<?php wp_nav_menu( array(
 									'theme_location' => 'primary',
 									'menu_class'     => 'nav navbar-nav navbar-right primary-menu font-size-150 text-uppercase border-bottom-gold-3 text-white-xs no-border-xs font-size-100-mobile text-transform-none-mobile',
-								 ) );
-							?>
+								 ) ); ?>
 						</div>
 						<?php endif; ?>
 				    </div><!-- /.navbar-collapse -->

@@ -30,31 +30,31 @@ get_header(); ?>
 				<div class="container-fluid">
 			    	<?php while ( have_rows('section_carousel') ) : the_row(); $carousel_height = get_sub_field('carousel_height'); $carousel_id = get_sub_field('carousel_id'); $row_count = count( get_sub_field('carousel_slide') ); ?>
 
-					<div id="<?php echo $carousel_id; ?>" class="carousel slide" data-ride="carousel" style="height: <?php echo $carousel_height; ?>;">
+					<div id="<?php echo $carousel_id; ?>" class="carousel slide" data-ride="carousel" style="min-height: <?php echo $carousel_height; ?>;">
 						<div class="row">
 							<?php $index = 0; while ( have_rows('carousel_slide') ) : the_row(); ?>
 	
-							<?php if( get_sub_field('active_indicator_styles') || get_sub_field('hover_indicator_styles') ) : ?>
+							<?php if( get_sub_field('active_indicator_styles') || get_sub_field('hover_indicator_styles') ) : $button_id = $carousel_id.'-button-'.$index; ?>
 							<style>
-								<?php echo('#'.$carousel_id.'-button-'.$index); ?>.active {
+								<?php echo('#'.$button_id); ?>.active {
 									<?php the_sub_field('active_indicator_styles', false, false); ?>
-									width: <?php echo(100/$row_count); ?>%;
+									width: <?php echo(100/$row_count) ?>%;
 								}
 
-								<?php echo('#'.$carousel_id.'-button-'.$index); ?>:not(.active):hover {
+								<?php echo('#'.$button_id); ?>:not(.active):hover {
 									<?php the_sub_field('hover_indicator_styles', false, false); ?>
 								}
 							</style>
 							<?php endif; ?>
 
 							<?php $index++; endwhile; ?>
-							<div class="carousel-indicators">
+							<div class="carousel-indicators text-center">
 								<?php $index = 0; while ( have_rows('carousel_slide') ) : the_row(); ?>
 
-								<button data-target="#<?php echo $carousel_id; ?>" data-slide-to="<?php echo $index ?>" class="<?php echo 'col-sm-'.(12/$row_count); echo ($index == 0) ? ' active ' : ' '; get_sub_field('indicator_class') ? the_sub_field('indicator_class') : ''; ?>" id="<?php echo($carousel_id.'-button-'.$index); ?>">
+								<button data-target="#<?php echo $carousel_id; ?>" data-slide-to="<?php echo $index ?>" class="<?php echo 'col-sm-'.(round(12/$row_count)).' col-xs-12'; echo ($index == 0) ? ' active ' : ' '; get_sub_field('indicator_class') ? the_sub_field('indicator_class') : ''; ?>" id="<?php echo($button_id); ?>">
 									<?php the_sub_field('indicator_title'); ?>
 								</button>
-		
+
 								<?php $index++; endwhile; ?>
 							</div>
 						</div>
@@ -62,7 +62,7 @@ get_header(); ?>
 							<div class="carousel-inner" role="listbox">
 								<?php $index = 0; while ( have_rows('carousel_slide') ) : the_row(); ?>
 						
-								<div class="item <?php echo ($index == 0) ? 'active ' : ''; the_sub_field('slide_class'); ?>"  style="height: <?php echo $carousel_height; ?>;">
+								<div class="item <?php echo ($index == 0) ? 'active ' : ''; the_sub_field('slide_class'); ?>"  style="min-height: <?php echo $carousel_height; ?>;">
 									<?php the_sub_field('slide_content', false, false); ?>
 								</div>
 
