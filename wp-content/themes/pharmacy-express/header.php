@@ -25,7 +25,7 @@
 	<div id="page" class="site">
 		<div class="site-inner">
 	
-			<header id="masthead" class="site-header" role="banner" style="background-image: url('<?php header_image(); ?>'); background-size: cover;">
+			<header id="masthead" class="site-header" role="banner" style="background-image: url('<?php background_image(); ?>'); background-size: cover;">
 				<nav class="navbar navbar-fixed-top background-white-50 no-border-radius" style="height: 135px;">
 				  <div class="container">
 				    <!-- Brand and toggle get grouped for better xs display -->
@@ -66,7 +66,7 @@
 
 				<div class="site-header-main container-fluid text-center buffer-padding-top-200 height-100">
 					<div class="site-branding">
-						<img src="<?php the_field('header_image'); ?>" height="300"></img>
+						<img src="<?php header_image(); ?>" height="250"></img>
 					</div><!-- .site-branding -->
 					<span class="text-gold">
 						<div class="buffer-margin-100">
