@@ -422,3 +422,10 @@ add_filter( 'widget_tag_cloud_args', 'pharmacyexpress_widget_tag_cloud_args' );
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 }
+
+
+// Credits
+function credits() {
+	echo "Made with &hearts; by InboundRx";
+}
+add_action( 'pharmacyexpress_credits', 'credits' );

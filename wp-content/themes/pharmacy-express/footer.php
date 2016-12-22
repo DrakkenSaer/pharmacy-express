@@ -28,21 +28,21 @@
 			<?php endif; ?>
 
 			<div class="site-info container buffer-padding-50">
-				<?php
-					/**
-					 * Fires before the pharmacyexpress footer text for footer customization.
-					 *
-					 * @since Pharmacy Express 1.0
-					 */
-					do_action( 'pharmacyexpress_credits' );
-				?>
-
 				<div class="col-md-5">
 					<span class="site-title"><a class="text-gold text-bold text-bitter font-size-150 text-decoration-none" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Copyright <?php bloginfo( 'name' ); ?> &copy; <?php echo date("Y"); ?></a></span>
 				</div>
 
 				<div class="col-md-4 col-md-offset-3">
 					<img src="<?php the_field('footer_logo', 'option'); ?>" width="300"></img>
+				</div>
+				
+				<div class="col-md-12">
+					<?php
+						/**
+						 * @since Pharmacy Express 1.0
+						 */
+						do_action( 'pharmacyexpress_credits' );
+					?>
 				</div>
 			</div><!-- .site-info -->
 		</footer><!-- .site-footer -->
